@@ -1,4 +1,5 @@
 import Versions from './components/Versions'
+import Player from './components/Player'
 import electronLogo from './assets/electron.svg'
 
 function App(): JSX.Element {
@@ -6,7 +7,12 @@ function App(): JSX.Element {
 
   return (
     <>
-      <div>Localitron</div>
+      <div className="title_container">
+        <span>Localify</span>
+      </div>
+      <div className="content_container">
+        <Player></Player>
+      </div>
       <Versions></Versions>
     </>
   )
