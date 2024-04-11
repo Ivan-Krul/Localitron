@@ -1,9 +1,9 @@
 import Versions from './components/Versions'
 import Player from './components/Player'
-import electronLogo from './assets/electron.svg'
+//import electronLogo from './assets/electron.svg'
 
 function App(): JSX.Element {
-  const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
+  //const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
 
   return (
     <>
@@ -11,7 +11,7 @@ function App(): JSX.Element {
         <span>Localify</span>
       </div>
       <div className="content_container">
-        <Player></Player>
+        <Player isButtonVisible={false}></Player>
       </div>
       <Versions></Versions>
     </>

@@ -1,33 +1,38 @@
+//import { dialog } from "electron";
 
 interface Props {
-    buttonVisibility?: boolean;
-    onPlay?: (path: string) => boolean;
+    eqOptions?: string[];
+    isButtonVisible?: boolean;
+    isEQVisible?: boolean;
 }
 
-function Player({}) {
+function Player({eqOptions = ["Full res", "Without"],isButtonVisible = true, isEQVisible = false}:Props) {
+    let comp : JSX.Element[] = [];
+    for(var i = 0; i < eqOptions.length; i++) {
+        comp.push(<option value={eqOptions[i]} >{eqOptions[i]} EQ</option>);
+    }
+
+    //let showOpenDir = () => {dialog.showOpenDialog({properties: ['openFile']})};
 
     return (
     <>
         <div id="player_container" className="player_container">
-            <audio controls id="player"></audio>
-
+            {isEQVisible? <canvas id="equalizer_visualer"></canvas> : <></>}
+            <audio controls id="player" src="./Zenith.mp3"></audio>
+            
+            {isButtonVisible
+            ? <>
             <button id="button_previous">Previous</button>
             <button id="button_chooseRandomly">Choose Randomly</button>
             <button id="button_next">Next</button>
             <button id="button_push">Push to list</button>
             <button id="button_pop">Pop from list</button>
             <button id="button_clear">Clear list</button>
-            <button id="button_downloadPlaylist">Download playlist (valid in directory with
-                content.txt)</button>
+            <button id="button_downloadPlaylist">Download playlist</button>
             <select id="select_eqRenderStage">
-                <option value="full">Full res EQ</option>
-                <option value="half">Half res EQ</option>
-                <option value="fifth">Fifth res EQ</option>
-                <option value="average x5">Average x5 res EQ</option>
-                <option value="average 4">Average 4 res EQ</option>
-                <option value="only 3">Only 3 res EQ</option>
-                <option value="no">Without EQ</option>
+                {comp}
             </select>
+            </> : <></>}
         </div>
     </>
     );
