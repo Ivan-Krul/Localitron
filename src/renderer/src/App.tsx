@@ -11,7 +11,7 @@ function App(): JSX.Element {
         <span>Localify</span>
       </div>
       <div className="content_container">
-        <Player isButtonVisible={false}></Player>
+        <Player isButtonVisible={true} eqOptions={["Full res", "Half res", "Fifth res", "Without"]}></Player>
       </div>
       <Versions></Versions>
     </>
