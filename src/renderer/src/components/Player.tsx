@@ -12,8 +12,6 @@ function Player({ eqOptions = ["Full res", "Without"], isButtonVisible = true, i
     comp.push(<option value={eqOptions[i]} >{eqOptions[i]} EQ</option>);
   }
 
-  //let showOpenDir = () => {dialog.showOpenDialog({properties: ['openFile']})};
-
   return (
     <>
       <div id="player_container" className="player_container">

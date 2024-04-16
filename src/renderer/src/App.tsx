@@ -8,7 +8,7 @@ function App(): JSX.Element {
   return (
     <>
       <div className="title_container">
-        <span>Localify</span>
+        <span>Localitron</span>
       </div>
       <div className="content_container">
         <Player isButtonVisible={true} eqOptions={["Full res", "Half res", "Fifth res", "Without"]}></Player>

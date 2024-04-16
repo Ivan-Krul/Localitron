@@ -1,5 +1,5 @@
 
-class LinkChopper {
+export class LinkChopper {
   public static cropName(link: string, dirSeparator: string = '/') {
     let split = link.split(dirSeparator);
     const filename = split[split.length - 1];

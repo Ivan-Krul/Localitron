@@ -1,26 +1,34 @@
 
-class Lister {
-    private globalList: string[];
-    private folders: string[];
+import { LinkChopper } from "../Utils/LinkChopper";
+
+export class ListerElement {
+    public name: string;
+    public path: string[];
+
+    constructor(name: string, path: string[]) {
+        this.name = name;
+        this.path = path;
+    }
+}
+
+export class Lister {
+
+
+    private globalList: ListerElement[];
 
 
 
-    public constructor(globalList: string[]) {
-        this.globalList = globalList;
-        this.folders = [];
+    public constructor(globalPathList: string[]) {
+        this.globalList = [];
 
-        this.unfoldToFolders();
+        this.generateElements(globalPathList);
     }    
 
-    private unfoldToFolders() {
-        for(let i = 0; i < this.globalList.length; i++) {
-            let found = this.folders.findIndex((arg: string) => { return arg === this.globalList[i]; });
+    private generateElements(globalPathList: string[]) {
+        for(let i = 0; i < globalPathList.length; i++) {
+            let liEl = new ListerElement(LinkChopper.cropName(globalPathList[i]),LinkChopper.cropDir(globalPathList[i]));
 
-            if(found === -1) {
-                this.folders.push()
-            }
-
+            this.globalList.push(liEl);
         }
-
     }
 }
