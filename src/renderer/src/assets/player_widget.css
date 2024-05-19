@@ -1,10 +1,22 @@
 @import './player.css';
 @import './player_widget_controlls.css';
 
-.player_widget {
+#player_widget {
     background-color: #333;
     margin-top: 5px;
     border: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+@media screen and (min-aspect-ratio: 1/1) {
+    #player_widget {
+        position: fixed;
+        right: 10px;
+        top: 70px;
+        height: calc(100vh - 90px);
+        width: calc(50vw - 20px);
+    }
 }

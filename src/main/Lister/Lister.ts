@@ -1,7 +1,7 @@
 
 import { LinkChopper } from "../Utils/LinkChopper";
 
-export class Folder {
+export class Directory {
     public readonly name: string;
 
     constructor(name: string) {
@@ -10,12 +10,15 @@ export class Folder {
 }
 
 export class Music {
-    public name: string;
-    public path: Folder[];
+    public readonly name: string;
+    public readonly folderTrace: Directory[];
 
-    constructor(name: string, path: Folder[]) {
-        this.name = name;
+    public readonly path: string;
+
+    constructor(path: string, folderTrace: Directory[]) {
         this.path = path;
+        this.name = LinkChopper.cropName(path);
+        this.folderTrace = folderTrace;
     }
 }
 
@@ -38,13 +41,13 @@ export class Lister {
             const musicPath = globalList[i];
             
             const musicFolders = LinkChopper.cropDir(musicPath);
-            let folders: Folder[] = [];
+            let folders: Directory[] = [];
 
             for(let f = 0; f < musicFolders.length; f++) {
-                folders.push(new Folder(musicFolders[f]));
+                folders.push(new Directory(musicFolders[f]));
             }
 
-            this.musicList.push(new Music(LinkChopper.cropName(musicPath), folders));
+            this.musicList.push(new Music(musicPath, folders));
         }
     }
 

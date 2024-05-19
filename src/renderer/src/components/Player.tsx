@@ -9,7 +9,7 @@ function Player({ isEQVisible = false, isButtonVisible = true}: Props) {
 
   return (
     <>
-      <div id="player_container" className="player_container">
+      <div id="player_widget">
         {isEQVisible ? <canvas id="equalizer_visualer"></canvas> : <></>}
         <audio controls id="player" src="./Zenith.mp3"></audio>
 
