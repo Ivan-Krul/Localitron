@@ -1,0 +1,10 @@
+@import './player.css';
+@import './player_widget_controlls.css';
+
+.player_widget {
+    background-color: #333;
+    margin-top: 5px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

@@ -1,6 +1,10 @@
-.title_container {
+#title_container {
     background-color: #008000;
     text-align: center;
     font-size: 200%;
     padding: 10px;
+    font-family: "Roboto-Medium";
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }

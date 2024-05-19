@@ -1,5 +1,5 @@
 import Versions from './components/Versions'
-import Player from './components/Player'
+import PlayerWidget from './components/PlayerWidget'
 //import electronLogo from './assets/electron.svg'
 
 function App(): JSX.Element {
@@ -7,11 +7,11 @@ function App(): JSX.Element {
 
   return (
     <>
-      <div className="title_container">
+      <div id="title_container">
         <span>Localitron</span>
       </div>
-      <div className="content_container">
-        <Player isButtonVisible={true} eqOptions={["Full res", "Half res", "Fifth res", "Without"]}></Player>
+      <div id="content_container">
+        <PlayerWidget isButtonVisible={true}></PlayerWidget>
       </div>
       <Versions></Versions>
     </>

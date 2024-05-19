@@ -1,16 +1,11 @@
 //import { dialog } from "electron";
 
 interface Props {
-  eqOptions?: string[];
-  isButtonVisible?: boolean;
   isEQVisible?: boolean;
+  isButtonVisible?: boolean;
 }
 
-function Player({ eqOptions = ["Full res", "Without"], isButtonVisible = true, isEQVisible = false }: Props) {
-  let comp: JSX.Element[] = [];
-  for (var i = 0; i < eqOptions.length; i++) {
-    comp.push(<option value={eqOptions[i]} >{eqOptions[i]} EQ</option>);
-  }
+function Player({ isEQVisible = false, isButtonVisible = true}: Props) {
 
   return (
     <>
@@ -26,11 +21,7 @@ function Player({ eqOptions = ["Full res", "Without"], isButtonVisible = true, i
             <button id="button_push">Push to list</button>
             <button id="button_pop">Pop from list</button>
             <button id="button_clear">Clear list</button>
-            <button id="button_downloadPlaylist">Download playlist</button>
-            <select id="select_eqRenderStage">
-              {comp}
-            </select>
-          </> : <></>}
+          </> : (<></>)}
       </div>
     </>
   );

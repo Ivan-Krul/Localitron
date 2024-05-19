@@ -1,12 +1,6 @@
 body {
   background-color: #111;
   color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto-Regular";
   font-size: small;
-}
-
-.folder {
-  background-color: #deb616;
-  font-size: 1ch;
-  color: black;
 }

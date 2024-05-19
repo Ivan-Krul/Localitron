@@ -1,4 +1,7 @@
 @import './base.css';
+@import './fonts.css';
+@import './folder.css';
 @import './list.css';
+
 @import './title.css';
-@import './player.css';
+@import './player_widget.css';

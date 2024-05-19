@@ -2,7 +2,7 @@
 import { LinkChopper } from "../Utils/LinkChopper";
 
 export class Folder {
-    public name: string;
+    public readonly name: string;
 
     constructor(name: string) {
         this.name = name;

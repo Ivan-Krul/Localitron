@@ -1,0 +1,12 @@
+.folder {
+    background-color: #deb616;
+    font-family: "Roboto-Light";
+    font-size: 1.5ch;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: black;
+    border: none;
+    border-radius: 2px;
+}

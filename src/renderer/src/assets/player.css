@@ -9,14 +9,3 @@
     /* Scrollability */
     padding: 5px;
 }
-
-.overlay {
-    overflow-x: hidden;
-}
-
-.overlay {
-    position: fixed;
-    left: 50%;
-    height: calc(100vh - 90px);
-    width: 48%;
-}

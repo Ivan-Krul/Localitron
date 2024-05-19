@@ -1,3 +1,3 @@
-.content_container {
-    height: calc(100vh - 70px);
+#content_container {
+    height: calc(100vh - 75px);
 }
